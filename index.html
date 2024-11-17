@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Stream</title>
+</head>
+<body>
+    <h1>Webcam Stream</h1>
+    <img id="webcam" src="" alt="Webcam Stream">
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const webcamImage = document.getElementById('webcam');
+        
+        socket.on('frame', (data) => {
+            webcamImage.src = 'data:image/jpeg;base64,' + data;
+        });
+    </script>
+</body>
+</html>
