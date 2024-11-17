@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "express": "^4.21.1",
+    "node-webcam": "^0.8.2"
+  }
+}
